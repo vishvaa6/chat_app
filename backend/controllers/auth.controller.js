@@ -8,8 +8,12 @@ export const signup = async (req,res)=>{
 
         const {fullname,username,password,confrimPassword,gender} = req.body;
 
+        if (typeof username !== 'string' || typeof password !== 'string') {
+            return res.status(400).json({error: "Invalid input data"});
+        }
+
         if(password !== confrimPassword){
-            return res.status(400).josn({error:"Password don't match"});
+            return res.status(400).json({error:"Password don't match"});
         }
 
         const user = await User.findOne({username});
@@ -56,6 +60,11 @@ export const signup = async (req,res)=>{
 export const login = async (req,res)=>{
     try{
         const {username,password} = req.body;
+
+        if (typeof username !== 'string' || typeof password !== 'string') {
+            return res.status(400).json({error: "Invalid input data"});
+        }
+
         const user = await User.findOne({username});
         const passwordcorrect = await bcrypt.compare(password, user?.password || "");
 
