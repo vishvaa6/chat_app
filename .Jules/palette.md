@@ -1,0 +1,3 @@
+## 2024-05-20 - Icon-only buttons lacking semantic HTML and ARIA labels
+**Learning:** When using icons (e.g. from react-icons) as buttons, using a clickable `div` or bare `svg` directly without wrapping it in a `<button>` element breaks keyboard accessibility and removes semantics. Even if wrapped in a button, screen readers won't announce the purpose without an `aria-label`.
+**Action:** Always wrap interactive icon elements in a proper `<button>` tag, include an `aria-label` attribute describing the action, and ensure keyboard focus visibility (e.g. `focus-visible:ring-2`).
