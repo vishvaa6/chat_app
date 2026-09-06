@@ -1,0 +1,3 @@
+## 2026-09-06 - Semantic HTML for Icons
+**Learning:** Found an accessibility anti-pattern in the sidebar where `react-icons` elements (e.g., `<FiLogOut>`) were used directly as interactive elements with an `onClick` handler. This breaks keyboard navigation completely (not discoverable by Tab) and offers no context to screen readers, meaning users navigating without a mouse are entirely blocked from logging out.
+**Action:** Always wrap interactive icons in a semantic `<button>` tag to gain native keyboard focus out-of-the-box. Additionally, pair this with an `aria-label` for screen reader context and use Tailwind's `focus-visible:` utilities to provide visual feedback for keyboard users without disrupting mouse users.
