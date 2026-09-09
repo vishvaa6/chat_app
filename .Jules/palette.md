@@ -1,0 +1,3 @@
+## 2024-06-25 - Wrap icon-only clickable elements in semantic button tags
+**Learning:** Attaching `onClick` directly to an SVG element like `<FiLogOut onClick={logout} />` prevents screen readers from understanding it as an interactive element and hinders proper keyboard navigation (tabbing/focus).
+**Action:** When creating icon-only clickable elements, always wrap the SVG or icon component in a semantic `<button>` element. Ensure the button has a descriptive `aria-label` (e.g., `aria-label="Log out"`) and clearly visible focus styles (e.g., using Tailwind's `focus-visible:ring-2` utilities) to provide feedback to keyboard users.
