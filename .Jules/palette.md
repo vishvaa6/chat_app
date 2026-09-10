@@ -1,0 +1,3 @@
+## 2026-09-10 - Wrap Interactive SVGs with Semantic Buttons
+**Learning:** Attaching `onClick` events directly to `svg` elements prevents them from being keyboard focusable and lacks semantics for screen readers, hiding important functionality from users who rely on assistive technologies.
+**Action:** Always wrap interactive icons or SVGs in a semantic `<button>` element with an appropriate `aria-label` and visible focus states (`focus-visible:ring-2`) to ensure full keyboard and screen reader accessibility.
