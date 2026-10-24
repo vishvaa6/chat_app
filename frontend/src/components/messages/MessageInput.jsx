@@ -22,7 +22,7 @@ const MessageInput = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></input>
-            <button type='submit' className='absolute inset-y-0 end-0 flex items-center pe-3'>
+            <button type='submit' className='absolute inset-y-0 end-0 flex items-center pe-3' aria-label='Send message' title='Send'>
                 {loading ? <div className='loading loading-spinner'></div> : <IoSend />}
             </button>
 
