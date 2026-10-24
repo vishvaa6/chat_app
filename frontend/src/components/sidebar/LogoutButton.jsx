@@ -12,6 +12,7 @@ const LogoutButton = () => {
           <button
             onClick={logout}
             aria-label="Logout"
+            title="Logout"
             className="focus-visible:ring-2 focus-visible:ring-sky-500 rounded focus-visible:outline-none"
           >
             <FiLogOut className='w-6 h-6 text-white cursor-pointer' />
