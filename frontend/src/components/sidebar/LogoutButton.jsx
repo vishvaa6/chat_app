@@ -9,11 +9,7 @@ const LogoutButton = () => {
   return (
     <div className='mt-auto'>
         {!loading ? (
-          <button
-            onClick={logout}
-            aria-label="Logout"
-            className="focus-visible:ring-2 focus-visible:ring-sky-500 rounded focus-visible:outline-none"
-          >
+          <button aria-label="Logout" onClick={logout} className="focus-visible:ring-2 focus:outline-none">
             <FiLogOut className='w-6 h-6 text-white cursor-pointer' />
           </button>
         ) : (
