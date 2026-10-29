@@ -18,11 +18,16 @@ const MessageInput = () => {
             <input 
               placeholder='Send a Message' 
               type='text' 
+              aria-label='Message content'
               className='border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 text-white'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></input>
-            <button type='submit' className='absolute inset-y-0 end-0 flex items-center pe-3'>
+            <button
+              type='submit'
+              aria-label='Send message'
+              disabled={loading || !message.trim()}
+              className='absolute inset-y-0 end-0 flex items-center pe-3 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity hover:text-white'>
                 {loading ? <div className='loading loading-spinner'></div> : <IoSend />}
             </button>
 
