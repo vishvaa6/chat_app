@@ -16,13 +16,19 @@ const MessageInput = () => {
     <form className='px-4 my-3' onSubmit={handleSubmit}>
         <div className='w-full relative'>
             <input 
+              aria-label='Message text'
               placeholder='Send a Message' 
               type='text' 
-              className='border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 text-white'
+              className='border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></input>
-            <button type='submit' className='absolute inset-y-0 end-0 flex items-center pe-3'>
+            <button
+              type='submit'
+              aria-label='Send message'
+              disabled={loading}
+              className='absolute inset-y-0 end-0 flex items-center pe-3 focus-visible:outline-none focus-visible:text-sky-500 hover:text-sky-500 disabled:opacity-50'
+            >
                 {loading ? <div className='loading loading-spinner'></div> : <IoSend />}
             </button>
 

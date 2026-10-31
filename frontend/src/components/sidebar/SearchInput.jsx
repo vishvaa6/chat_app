@@ -25,9 +25,20 @@ const SearchInput = () => {
   }
   return (
     <form onSubmit={handleSubmit}  className='flex items-center gap-2'>
-      <input value={search} onChange={(e) => setSearch(e.target.value)} type='text' placeholder='Search...' className='input input-bordered rounded-full'></input>
+      <input
+        aria-label='Search users'
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        type='text'
+        placeholder='Search...'
+        className='input input-bordered rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500'
+      ></input>
 
-      <button type='submit' className='btn btn-circle bg-sky-500 text-white'>
+      <button
+        type='submit'
+        aria-label='Search'
+        className='btn btn-circle bg-sky-500 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 hover:bg-sky-600'
+      >
         <FaSearch className='w-6 h-6 outline-none'/>
       </button>
 
