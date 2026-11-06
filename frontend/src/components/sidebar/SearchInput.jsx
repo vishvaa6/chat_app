@@ -13,7 +13,7 @@ const SearchInput = () => {
     e.preventDefault();
     if(!search) return
     if(search.length < 3){
-      return toast.error("Search Tearm must atleast 3 characters long");
+      return toast.error("Search term must be at least 3 characters long");
     }
 
     const conversation = conversations.find((c) => c.fullname.toLowerCase().includes(search.toLowerCase()))
@@ -27,7 +27,7 @@ const SearchInput = () => {
     <form onSubmit={handleSubmit}  className='flex items-center gap-2'>
       <input value={search} onChange={(e) => setSearch(e.target.value)} type='text' placeholder='Search...' className='input input-bordered rounded-full'></input>
 
-      <button type='submit' className='btn btn-circle bg-sky-500 text-white'>
+      <button type='submit' className='btn btn-circle bg-sky-500 text-white hover:bg-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-500' aria-label="Search">
         <FaSearch className='w-6 h-6 outline-none'/>
       </button>
 
